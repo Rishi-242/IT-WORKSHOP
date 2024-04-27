@@ -1,4 +1,3 @@
-
 //1.show your username.//
 user@rishi:~$ whoami
 user
@@ -1258,7 +1257,9 @@ user     :0           :0               Wed Dec  6 23:16 - down   (00:49)
 reboot   system boot  5.13.0-35-generi Wed Dec  6 23:16 - 00:06  (00:49)
 
 wtmp begins Wed Dec  6 23:01:11 2023
+\\create new file or directory//
 user@rishi:~$ touch file1
+//insert the data into the file//
 user@rishi:~$ cat>file1
 rgukt
 basar
