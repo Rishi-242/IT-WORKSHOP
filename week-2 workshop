@@ -1,76 +1,55 @@
-touch file1
-user@rishi:~$ mv file1
-mv: missing destination file operand after 'file1'
-Try 'mv --help' for more information.
-user@rishi:~$ grep -o "unix" geekfile.txt
-grep: geekfile.txt: No such file or directory
-\user@rishi:~$ \
-> unix
-
-Command 'unix' not found, did you mean:
-
-  command 'uniq' from deb coreutils (8.30-3ubuntu2)
-  command 'uni' from deb uniconf-tools (4.6.1-14build1)
-
-Try: sudo apt install <deb name>
-
-user@rishi:~$ grep -o "unix" grepfile.txt
-grep: grepfile.txt: No such file or directory
-user@rishi:~$ touch grep
-user@rishi:~$ cat>grep
-welcome to ubuntu 
-linux
-unix
-rgukt 
-basar
-user@rishi:~$ grep "unix" grepfile.txt
-grep: grepfile.txt: No such file or directory
-user@rishi:~$ grep "unix" grep.txt
-grep: grep.txt: No such file or directory
-user@rishi:~$ rm grep
+//1.to create a new file.//
 user@rishi:~$ touch grepfile.txt
+//2.it is  used to add data into file.//
 user@rishi:~$ cat>grepfile.txt
 welcome to ubuntu
 linux
 unix
+//3.print the matching data in the entereed data.//
 user@rishi:~$ grep "unix" grepfile.txt
 unix
-user@rishi:~$ grep "linux" grepfile.txt
-linux
 user@rishi:~$ grep "welcome to ubuntu" grepfile.txt
 welcome to ubuntu
 user@rishi:~$ grep "^unix" grepfile.txt
 unix
 user@rishi:~$ grep "^welcome to ubuntu" grepfile.txt
 welcome to ubuntu
+//4.this priint out all the lines that doesnt match the pattern./// 
 user@rishi:~$ grep -v "unix" grepfile.txt
 welcome to ubuntu
 linux
 user@rishi:~$ grep -v "linux" grepfile.txt
 welcome to ubuntu
 unix
+//5.it is used to add the data.//
 user@rishi:~$ cat>grepfile.txt
 unix is great os.unix is opem source.unix is free operating system.
 learning os.
 unix and linux which one you choose.
 unix is easy to learn.unix is s multiuser operating system.
 learn unix and linux is a powerful operating system.
+//6.this prints the lines matches a pattern.//
 user@rishi:~$ grep -c "unix" grepfile.txt
 4
+//7.it displays the matched lines ,but doexn't print the filenames.//
 user@rishi:~$ grep -h "unix" grepfile.txt
 unix is great os.unix is opem source.unix is free operating system.
 unix and linux which one you choose.
 unix is easy to learn.unix is s multiuser operating system.
 learn unix and linux is a powerful operating system.
+//8.it displays the filename only.///
 user@rishi:~$ grep -l "unix" grepfile.txt
 grepfile.txt
+//9.displays the file name and number.//
 user@rishi:~$ grep -n  "unix" grepfile.txt
 1:unix is great os.unix is opem source.unix is free operating system.
 3:unix and linux which one you choose.
 4:unix is easy to learn.unix is s multiuser operating system.
 5:learn unix and linux is a powerful operating system.
+//10.this prints out the lines  that doesn't matches the pattern.//
 user@rishi:~$ grep -v  "unix" grepfile.txt
 learning os.
+//11.specifies expressions  with the option.//
 user@rishi:~$ grep -e  "unix" grepfile.txt
 unix is great os.unix is opem source.unix is free operating system.
 unix and linux which one you choose.
@@ -92,20 +71,10 @@ unix
 unix
 unix
 user@rishi:~$ sed 's/os/unix' grepfile.txt
-sed: -e expression #1, char 9: unterminated `s' command
-user@rishi:~$ sed '/os/unix' grepfile.txt
-sed: -e expression #1, char 5: unknown command: `u'
-user@rishi:~$ sed 's/os/unix' grepfile.txt
-sed: -e expression #1, char 9: unterminated `s' command
-user@rishi:~$ sed '-e/os/unix' grepfile.txt
-sed: -e expression #1, char 5: unknown command: `u'
-user@rishi:~$ sed 's/unix/linux' grepfile.txt
-sed: -e expression #1, char 12: unterminated `s' command
 user@rishi:~$ cat>sedgrepfile.txt
 linux
 unix
-user@rishi:~$ sed 's/linux/unix/' sgrepfile.txt
-sed: can't read sgrepfile.txt: No such file or directory
+//12.replacing the string.//
 user@rishi:~$ sed 's/linux/unix/' grepfile.txt
 unix is great os.unix is opem source.unix is free operating system.
 learning os.
@@ -124,6 +93,7 @@ hello
 world
 welcome   
 to python workshp
+//13.replacing the nth occurance  of a patttern in the line.//
 user@rishi:~$ sed 's/hello/world/g' file1.txt
 world
 world
@@ -190,6 +160,7 @@ it
 operating system
 python
 web technologies
+//14.specifies the output in sorted order.//
 user@rishi:~$ sort -o "it" file2.txt
 user@rishi:~$ sort -o "works" file2.txt
 user@rishi:~$ sed '/core/d' file2.txt
@@ -198,38 +169,41 @@ it
 operating system
 web technologies
 design algorithms 
+//15.sorted the data in reverse order.//
 user@rishi:~$ sort -r file2.txt
 web technologies
 python
 operating system
 it
 design algorithms 
+//16.sorts a file in numerically.///
 user@rishi:~$ sort -n file2.txt
 design algorithms 
 it
 operating system
 python
 web technologies
+//17.sorts the daata numericaly in reverse order.///
 user@rishi:~$ sort -nr file2.txt
 web technologies
 python
 operating system
 it
 design algorithms 
+//18.sorts a data in the specific column.//
 user@rishi:~$ sort -k  file2.txt
 sort: invalid number at field start: invalid count at start of ‘file2.txt’
-user@rishi:~$ sort -k file2.txt
-sort: invalid number at field start: invalid count at start of ‘file2.txt’
-user@rishi:~$ sort -k file2.txt
-sort: invalid number at field start: invalid count at start of ‘file2.txt’
+//19.checks the files whether all the data is sorted or not.///
 user@rishi:~$ sort -c  file2.txt
 sort: file2.txt:2: disorder: it
+//21.sorts and duplicates lines.//
 user@rishi:~$ sort -u  file2.txt
 design algorithms 
 it
 operating system
 python
 web technologies
+//22.sorts by month names.//
 user@rishi:~$ sort -M  file2.txt
 design algorithms 
 it
@@ -270,10 +244,12 @@ amit manager account 47000
 tarun peon sales 15000
 deepak clerk sales 23000
 sunil peon sales 13000
+//23.use of NR built in variable.//
 user@rishi:~$ awk '/manager/{print}' employee.txt
 ajay manager account 45000
 varun manager sales 50000
 amit manager account 47000
+//24.to return the second column.//
 user@rishi:~$ awk'{print $s2,$4}' employee.txt
 awk{print $s2,$4}: command not found
 user@rishi:~$ awk '{print $s2,$4}' employee.txt
@@ -281,19 +257,19 @@ ajay manager account 45000 45000
 sunil clerk account 25000 25000
 varun manager sales 50000 50000
 amit manager account 47000 47000
- 
 tarun peon sales 15000 15000
 deepak clerk sales 23000 23000
 sunil peon sales 13000 13000
+//25.to count the lines in a file.//
 user@rishi:~$ awk '{print NR,$O}' employee.txt
 1 ajay manager account 45000
 2 sunil clerk account 25000
 3 varun manager sales 50000
 4 amit manager account 47000
-5 
 6 tarun peon sales 15000
 7 deepak clerk sales 23000
 8 sunil peon sales 13000
+//26.
 user@rishi:~$ awk '{print $s2}' employee.txt
 ajay manager account 45000
 sunil clerk account 25000

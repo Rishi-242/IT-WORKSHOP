@@ -1,3 +1,4 @@
+
 //1.show your username.//
 user@rishi:~$ whoami
 user
@@ -1257,23 +1258,9 @@ user     :0           :0               Wed Dec  6 23:16 - down   (00:49)
 reboot   system boot  5.13.0-35-generi Wed Dec  6 23:16 - 00:06  (00:49)
 
 wtmp begins Wed Dec  6 23:01:11 2023
-\\create new file or directory//
+//6.it is used to create new file.//
 user@rishi:~$ touch file1
-//insert the data into the file//
-user@rishi:~$ cat>file1
-rgukt
-basar
-^C
-user@rishi:~$ touch file2
-user@rishi:~$ cat>file2
-iiit
-first 
-^C
-user@rishi:~$ rmdir file1
-rmdir: failed to remove 'file1': Not a directory
-user@rishi:~$ rm file1
-user@rishi:~$ rm file2
-user@rishi:~$ touch file1
+//7.it is used to enter the data into file.//
 user@rishi:~$ cat>file1
 rgukt
 basar
@@ -1282,17 +1269,23 @@ user@rishi:~$ cat>file2
 iiit
 basara
 rajiv
+//8.it is used to copy the files.///
 user@rishi:~$ cp file1 file2
+//9.it is  used to move the one file intoo another file.//
 user@rishi:~$ mv file2 file1
+//10.it is used to remove the file.//
 user@rishi:~$ rm file1
+//11.create  the new directory.//
 user@rishi:~$ mkdir dir1
 user@rishi:~$ mkdir dir2
 user@rishi:~$ rmdir dir1
+/12.change directory.//
 user@rishi:~$ cd dir2
 user@rishi:~/dir2$ cd dir1
-bash: cd: dir1: No such file or directory
+//13.print the present workiing directory.//
 user@rishi:~/dir2$ pwd dir2
 /home/user/dir2
+//14.list of directories.//
 user@rishi:~/dir2$ ls -alt
 total 24
 drwxr-xr-x 33 user user 20480 Apr 21 20:39 ..
@@ -1303,17 +1296,18 @@ user@rishi:~/dir2$ ls -ltr
 total 0
 user@rishi:~/dir2$ ls -a
 .  ..
+//15.locate a command.//
 user@rishi:~/dir2$ which -a cat
 /usr/bin/cat
 /bin/cat
+//16.interface for working with the onliine reference  manuals.//
 user@rishi:~/dir2$ man cat
+//17.change user  id.//
 user@rishi:~/dir2$ su user
 Password: 
 user@rishi:~/dir2$ su guest
 Password: 
 guest@rishi:/home/user/dir2$ java  multi
-Error: Could not find or load main class multi
-Caused by: java.lang.ClassNotFoundException: multi
 guest@rishi:/home/user/dir2$ su user
 Password: 
 user@rishi:~/dir2$ su guest
@@ -1328,17 +1322,10 @@ guest@rishi:/home/user/dir2$ su user
 Password: 
 user@rishi:~/dir2$ sudo ls/user/local/protected
 [sudo] password for user: 
-sudo: ls/user/local/protected: command not found
-user@rishi:~/dir2$ sudo ls/user/local/protected
-sudo: ls/user/local/protected: command not found
-user@rishi:~/dir2$ sudo ls/usr/local/protected
-sudo: ls/usr/local/protected: command not found
-user@rishi:~/dir2$ sudo ls/usr/local/protected
-sudo: ls/usr/local/protected: command not found
-user@rishi:~/dir2$ find /usr -type c-name backup
-find: Must separate multiple arguments to -type using: ','
+//18.estiimate disk usage is blocks.//
 user@rishi:~/dir2$ du
-4	.
+4	
+//19.show the numbeer of free blocks for the mounted file system.//
 user@rishi:~/dir2$ df -l
 Filesystem     1K-blocks     Used Available Use% Mounted on
 udev             3924408        0   3924408   0% /dev
@@ -1364,15 +1351,7 @@ tmpfs            3957876        0   3957876   0% /sys/fs/cgroup
 /dev/loop13        12672    12672         0 100% /snap/snap-store/959
 /dev/loop14        39680    39680         0 100% /snap/snapd/21465
 tmpfs             791572       44    791528   1% /run/user/1000
-user@rishi:~/dir2$ cal
-     April 2024       
-Su Mo Tu We Th Fr Sa  
-    1  2  3  4  5  6  
- 7  8  9 10 11 12 13  
-14 15 16 17 18 19 20  
-21 22 23 24 25 26 27  
-28 29 30              
-                      
+//20.displays the calender.//                      
 user@rishi:~/dir2$ cal 9 2003
    September 2003     
 Su Mo Tu We Th Fr Sa  
@@ -1382,17 +1361,7 @@ Su Mo Tu We Th Fr Sa
 21 22 23 24 25 26 27  
 28 29 30              
                       
-user@rishi:~/dir2$ cal 8 2003
-    August 2003       
-Su Mo Tu We Th Fr Sa  
-                1  2  
- 3  4  5  6  7  8  9  
-10 11 12 13 14 15 16  
-17 18 19 20 21 22 23  
-24 25 26 27 28 29 30  
-31                    
-user@rishi:~/dir2$ cal 26 2002
-cal: 26 is neither a month number (1..12) nor a name
+         
 user@rishi:~/dir2$ cal 01 2002
     January 2002      
 Su Mo Tu We Th Fr Sa  
@@ -1401,16 +1370,17 @@ Su Mo Tu We Th Fr Sa
 13 14 15 16 17 18 19  
 20 21 22 23 24 25 26  
 27 28 29 30 31        
-                      
-user@rishi:~/dir2$ date +%d/%m/%d
-21/04/21
+//21.displas the system date and time.//                      
 user@rishi:~/dir2$ date +%d/%m/%y
 21/04/24
+//22.displays the lists of useers currently logged in
 user@rishi:~/dir2$ who
 user     :0           2024-04-21 20:31 (:0)
+//23.displays the users id of the currently logged in.//
 user@rishi:~/dir2$ whoami
 user
 user@rishi:~/dir2$ ls
+//24.print the history of commands in the current session.///
 user@rishi:~/dir2$ history
  1016  ./a.out
  1017  gcc mulskip.c
